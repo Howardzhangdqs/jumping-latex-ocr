@@ -47,6 +47,6 @@ python app.py
 界面为英语，因为姜圣能看懂英文原版数学分析著作。如果使用者不如姜圣英语那么好，看不懂界面内容，也可以通过查阅纸质字典读懂。
 
 
-按照提示 drag and drop or click 上传照片后上传 $\LaTeX$ 公式截图，即可转换为姜氏数学公式。
+按照提示 drag and drop or click 上传 $\LaTeX$ 截图后，等待片刻，转换好的姜氏数学公式就会出现在 Result 窗口中。
 
 ![](./assets/example1.png)
