@@ -7,3 +7,46 @@
 该套数学体系十分完备，原创了许多独特的数学符号，包含了谢惠民数学方便面相关的芝士。
 
 姜圣擅长 $\LaTeX$，本项目就是协助姜圣将日常的普通数学公式转化为她原创的姜氏数学公式。
+
+## 姜氏数学简介
+
+数学符号方面的改进：
+
+1. $\sum$ 改为 $\mathop{\frac{}2}$。此修改依据著名的姜萍恒等式 $\displaystyle\sum_{k=0}^{+\infty} = \displaystyle\mathop{\frac{}2}\limits_{k=0}^{+\infty}$。
+2. $\dot z$、$\dot{\mathcal{Z}}$ 改为 $主$。此修改用以表示姜氏数学使用者心中始终保持对主的虔诚，等待主从三体星系降临到地球上。
+3. $\Gamma$ 改为 $7$ 或 $T$。
+4. $\pi z$ 改为 $\pi^z$。此修改为姜圣在黑板上所写下的谶语，虽然不知道是啥意思，但是写就完事了。
+5. $\phi$、$\Phi$、$\varPhi$、$\psi$、$\Psi$ 改为 $\varphi$。此修改是因为姜圣分不清楚这些符号的区别，作为姜氏数学的使用者，分不清楚这些符号才能更好的做题。
+
+
+读音方面的改进：
+
+1. “数学分析”应读作“数学方面”
+
+
+## 安装
+
+请先确保您电脑上已安装 Pytorch，再运行以下命令：
+
+```bash
+pip install -r requirements.txt
+```
+
+## 使用
+
+运行命令：
+
+```bash
+python app.py
+```
+
+等待程序启动完毕，出现 `* Running on http://127.0.0.1:5000 INFO:werkzeug:Press CTRL+C to quit` 字样，打开 `localhost:5000` 即可使用 Jumping LaTeX OCR WebUI。
+
+![](./assets/interface.png)
+
+界面为英语，因为姜圣能看懂英文原版数学分析著作。如果使用者不如姜圣英语那么好，看不懂界面内容，也可以通过查阅纸质字典读懂。
+
+
+按照提示 drag and drop or click 上传照片后上传 $\LaTeX$ 公式截图，即可转换为姜氏数学公式。
+
+![](./assets/example1.png)
