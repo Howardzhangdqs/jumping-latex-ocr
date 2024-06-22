@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumping LaTeX OCR WebUI</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-size: 3rem;
+        }
+
+        #app {
+            height: 100vh;
+            width: 100vw;
+            text-align: center;
+
+            font-family: Consolas;
+        }
+
+        .block {
+            height: 100%;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 2.5rem;
+        }
+
+        .inner-block {
+            margin: 10px 0;
+            width: calc(100% - 40px);
+            height: 100%;
+            border: 5px solid #999;
+            border-radius: 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 2rem;
+        }
+    </style>
+
+    <script src="https://cdn.staticfile.net/jquery/3.7.1/jquery.min.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+
+<body>
+    <div id="app" style="display: flex; flex-direction: column;">
+        <div style="margin-top: 5px;">Jumping <span id="latex">LaTeX</span> OCR WebUI</div>
+        <div style="height: 100%; display: flex; margin-top: 5px;">
+            <div class="block">
+                Input Image
+                <div class="inner-block" ondrop="drop_handler(event)" ondragover="dragover(event)"
+                    onclick="select_file(event)" id="input-img">
+                    <div style="margin: 20px;">Drag and drop or click here</div>
+                </div>
+            </div>
+            <div class="block">Result<div class="inner-block" id="result"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        $(() => {
+            MathJax.texReset();
+            MathJax.typesetClear();
+            MathJax.tex2svgPromise("\\LaTeX").then((node) => {
+                console.log(node);
+                $('#latex').html(node.firstChild.outerHTML);
+            });
+        });
+
+        // 将图片发送至 /api/ocr
+        const drop_handler = (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log("drop", e);
+            const file = e.dataTransfer.files[0];
+            const formData = new FormData();
+            formData.append('file', file);
+
+            // 在#input-img中显示图片
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                console.log(e.target.result);
+                $('#input-img').html(`<img src="${e.target.result}" style="width: 100%; height: 100%; object-fit: contain" />`);
+            };
+            reader.readAsDataURL(file);
+
+            $.ajax({
+                url: '/api/ocr',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: (res) => {
+                    console.log(res);
+                    const tex = res.tex;
+                    console.log(tex);
+
+                    // mathjax 渲染 tex 为 svg
+                    MathJax.texReset();
+                    MathJax.typesetClear();
+                    MathJax.tex2svgPromise(tex).then((node) => {
+                        console.log(node);
+                        $('#result').html(node.outerHTML);
+                    });
+
+                }
+            });
+        };
+
+        const dragover = (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+        };
+
+        const select_file = (e) => {
+            console.log("select file");
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = (e) => {
+                const file = e.target.files[0];
+                const formData = new FormData();
+                formData.append('file', file);
+
+                // 在#input-img中显示图片
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    console.log(e.target.result);
+                    $('#input-img').html(`<img src="${e.target.result}" style="width: 100%; height: 100%; object-fit: contain" />`);
+                };
+                reader.readAsDataURL(file);
+
+                $.ajax({
+                    url: '/api/ocr',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: (res) => {
+                        console.log(res);
+                        const tex = res.tex;
+                        console.log(tex);
+
+                        // mathjax 渲染 tex 为 svg
+                        MathJax.texReset();
+                        MathJax.typesetClear();
+                        MathJax.tex2svgPromise(tex).then((node) => {
+                            console.log(node);
+                            $('#result').html(node.outerHTML);
+                        });
+
+                    }
+                });
+            };
+            input.click();
+        };
+    </script>
+</body>
+
+</html>
