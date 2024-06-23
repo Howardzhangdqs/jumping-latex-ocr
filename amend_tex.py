@@ -15,6 +15,7 @@ patterns = [
     ],
     [[r"\Gamma"], ["T", "7", r"\text{T}"]],
     [[r"\pi z"], [r"\pi^z"]],
+    [[r"\pi x"], [r"\pi^x"]],
     [
         [r"\psi", r"\phi", r"\Phi", r"\varPhi", r"\Psi"],
         [r"\varphi"]
@@ -25,7 +26,13 @@ patterns = [
 def amend_tex(tex: str):
     for pattern in patterns:
         for query in pattern[0]:
-            tex = tex.replace(query, choice(pattern[1]))
+            new_tex = ""
+            while tex != new_tex:
+                # print("LOG", tex, new_tex)
+                if new_tex != "":
+                    tex = new_tex
+                new_tex = tex.replace(query, choice(pattern[1]), 1)
+            tex = new_tex
     return tex
 
 
