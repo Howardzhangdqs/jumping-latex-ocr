@@ -1,1 +1,4 @@
-pix2tex[cli]==0.1.2
+pix2tex[cli]>=0.1.2
+Flask>=2.3.3
+opencv-python>=4.9.0.80
+numpy>=1.26.4

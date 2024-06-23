@@ -19,7 +19,9 @@ patterns = [
     [
         [r"\psi", r"\phi", r"\Phi", r"\varPhi", r"\Psi"],
         [r"\varphi"]
-    ]
+    ],
+    [[r"c\mu", r"c \mu"], [r"L/\text -l"]],
+    [[r"\mu"], [r"m", r"r\!u"]],
 ]
 
 
@@ -28,7 +30,6 @@ def amend_tex(tex: str):
         for query in pattern[0]:
             new_tex = ""
             while tex != new_tex:
-                # print("LOG", tex, new_tex)
                 if new_tex != "":
                     tex = new_tex
                 new_tex = tex.replace(query, choice(pattern[1]), 1)
@@ -37,5 +38,6 @@ def amend_tex(tex: str):
 
 
 if __name__ == "__main__":
-    tex = r"\sum_{k=1}^{+\infty}=\dot z + \Gamma\left(\pi z\right) \Psi"
-    print(amend_tex(tex))
+    print(
+        amend_tex(r"\sum_{k=1}^{+\infty}=\dot z + \Gamma\left(\pi z\right) \Psi"))
+    print(amend_tex(r"c\mu c"))
