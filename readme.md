@@ -18,7 +18,7 @@
 4. $\pi z$ 改为 $\pi^z$。此修改为姜圣在黑板上所写下的谶语，虽然不知道是啥意思，但是写就完事了。
 5. $\phi$、 $\Phi$、 $\varPhi$、 $\psi$、 $\Psi$ 改为 $\varphi$。此修改是因为姜圣分不清楚这些符号的区别，作为姜氏数学的使用者，分不清楚这些符号才能更好的做题。
 6. $c\mu$ 改为 $L/\text -l$。（[来源](https://www.zhihu.com/question/659498117/answer/3538824153)）
-7. $\mu$ 改为 $m$ 或 $r\!u$。（[来源](https://www.zhihu.com/question/659498117/answer/3538824153)）
+7. $\mu$ 改为 $m$ 或 $ru$。（[来源](https://www.zhihu.com/question/659498117/answer/3538824153)）
 
 
 读音方面的改进：
