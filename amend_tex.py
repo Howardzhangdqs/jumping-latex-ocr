@@ -13,7 +13,7 @@ patterns = [
             r"\dot{\mathcal{z}}",
         ], ["主"]
     ],
-    [[r"\Gamma"], ["T", "7", r"\text{T}"]],
+    [[r"\Gamma"], [" T ", " 7 ", r"\text{T}"]],
     [[r"\pi z"], [r"\pi^z"]],
     [[r"\pi x"], [r"\pi^x"]],
     [
@@ -21,7 +21,9 @@ patterns = [
         [r"\varphi"]
     ],
     [[r"c\mu", r"c \mu"], [r"L/\text -l"]],
-    [[r"\mu"], [r"m", r"r\!u"]],
+    [[r"\mu"], [r" m ", r" r\!u "]],
+    [[r"\nabla"], [r" D "]],
+    [[r"B_1", r"B_{1}"], [r" B \cdot 1 "]]
 ]
 
 

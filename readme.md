@@ -17,8 +17,10 @@
 3. $\Gamma$ 改为 $7$ 或 $T$。
 4. $\pi z$ 改为 $\pi^z$。此修改为姜圣在黑板上所写下的谶语，虽然不知道是啥意思，但是写就完事了。
 5. $\phi$、 $\Phi$、 $\varPhi$、 $\psi$、 $\Psi$ 改为 $\varphi$。此修改是因为姜圣分不清楚这些符号的区别，作为姜氏数学的使用者，分不清楚这些符号才能更好的做题。
-6. $c\mu$ 改为 $L/\text -l$。【[来源](https://www.zhihu.com/question/659498117/answer/3538824153)】
-7. $\mu$ 改为 $m$ 或 $ru$。【[来源](https://www.zhihu.com/question/659498117/answer/3538824153)】
+6. $c\mu$ 改为 $L/\text -l$。【[出处](https://www.zhihu.com/question/659498117/answer/3538824153)】
+7. $\mu$ 改为 $m$ 或 $ru$。【[出处](https://www.zhihu.com/question/659498117/answer/3538824153)】
+8. $\nabla$ 改为 $D$。
+8. $B_1$ 改为 $B \cdot 1$。
 
 
 读音方面的改进：
@@ -56,7 +58,7 @@ python app.py
 
 ## 姜学学习心得摘录
 
-[@秋分丿](https://www.zhihu.com/people/wang-huang-xuan)【[来源](https://www.zhihu.com/question/659498117/answer/3538824153)】：姜圣的书写内容犹如克苏鲁，不可直视，不可解读，任何主观的解读都是在曲解姜圣的公式。
+[@秋分丿](https://www.zhihu.com/people/wang-huang-xuan)【[出处](https://www.zhihu.com/question/659498117/answer/3538824153)】：姜圣的书写内容犹如克苏鲁，不可直视，不可解读，任何主观的解读都是在曲解姜圣的公式。
 
 [@源律花](https://www.zhihu.com/people/86011a3be26da90a252e9263dd98e633)：信他的人，不被定罪；不信的人，罪已经定了。甚至将祂的独生女赐给他们。叫一切信祂的不致灭亡，反得永生。
 

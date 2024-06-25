@@ -68,7 +68,7 @@
         $(() => {
             MathJax.texReset();
             MathJax.typesetClear();
-            MathJax.tex2svgPromise("\\LaTeX").then((node) => {
+            MathJax.tex2svgPromise("\\mathrm{\\LaTeX}").then((node) => {
                 console.log(node);
                 $('#latex').html(node.firstChild.outerHTML);
             });
